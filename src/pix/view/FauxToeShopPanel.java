@@ -18,7 +18,8 @@ public class FauxToeShopPanel extends JPanel
 {
 	private FauxToeShopController baseController;
 	
-	private JComboBox filterBox;
+	private JComboBox<String> filterBox;
+	private JComboBox<String> immageBox;
 	private JScrollPane imagePane;
 	private SpringLayout baseLayout;
 	
@@ -41,6 +42,12 @@ public class FauxToeShopPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void loadPicture()
+	{
+		basePicutre = new Picutre (imageArray[imageBox.getSelectedINdex()]);
+		setupPicture();
 	}
 	
 	private void setupComboBox()
@@ -72,7 +79,11 @@ public class FauxToeShopPanel extends JPanel
 			};
 		
 			filterBox = new JComboBox(filterArray);
-			baseLayout.putConstraint(SpringLayout.NORTH, filterBox, 0, SpringLayout.NORTH, this);
+			
+			imageArray = new String [] {
+					
+					
+					};
 	}
 	
 	private void setupPanel()
@@ -86,7 +97,7 @@ public class FauxToeShopPanel extends JPanel
 	{
 		BufferedImage bufferedPic = basePicture.getBufferedImage();
 		ImageDisplay picDisplay = new ImageDisplay(bufferedPic);
-		FlowLayout flowLayout = (FlowLayout) picDisplay.getLayout();
+//		FlowLayout flowLayout = (FlowLayout) picDisplay.getLayout();
 		imagePane.setViewportView(picDisplay);
 	}
 	
@@ -94,17 +105,24 @@ public class FauxToeShopPanel extends JPanel
 	{
 		BufferedImage bufferedPic = resetPicture.getBufferedImage();
 		ImageDisplay picDisplay = new ImageDisplay(bufferedPic);
-		FlowLayout flowLayout = (FlowLayout) picDisplay.getLayout();
+//		FlowLayout flowLayout = (FlowLayout) picDisplay.getLayout();
 		imagePane.setViewportView(picDisplay);
 	}
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, filterBox, 0, SpringLayout.NORTH, this);
 	}
 	
 	private void setupListeners()
 	{
+		imageBox.addItemListener(new ItemListener()
+		{
+			
+		});
+		
+		
+		
 		filterBox.addItemListener(new ItemListener()
 		{
 			
