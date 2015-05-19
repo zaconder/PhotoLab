@@ -44,11 +44,11 @@ public class FauxToeShopPanel extends JPanel
 		setupListeners();
 	}
 	
-	private void loadPicture()
-	{
-		basePicutre = new Picutre (imageArray[imageBox.getSelectedINdex()]);
-		setupPicture();
-	}
+//	private void loadPicture()
+//	{
+//		basePicture = new Picture (imageArray[imageBox.getSelectedINdex()]);
+//		setupPicture();
+//	}
 	
 	private void setupComboBox()
 	{
@@ -80,10 +80,10 @@ public class FauxToeShopPanel extends JPanel
 		
 			filterBox = new JComboBox(filterArray);
 			
-			imageArray = new String [] {
-					
-					
-					};
+//			imageArray = new String [] {
+//					
+//					
+//					};
 	}
 	
 	private void setupPanel()
@@ -116,10 +116,10 @@ public class FauxToeShopPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		imageBox.addItemListener(new ItemListener()
-		{
-			
-		});
+//		imageBox.addItemListener(new ItemListener()
+//		{
+//			
+//		});
 		
 		
 		
